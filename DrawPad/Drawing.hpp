@@ -28,26 +28,26 @@ extern int      gMouseX;            //!< マウスの現在のX座標
 extern int      gMouseY;            //!< マウスの現在のY座標
 
 // 色の定数
-extern const int    kColorBlack;
-extern const int    kColorGray;
-extern const int    kColorWhite;
-extern const int    kColorRed;
-extern const int    kColorGreen;
-extern const int    kColorBlue;
-extern const int    kColorYellow;
-extern const int    kColorDarkBlue;
+extern const int    kColorBlack;    //!< 黒の色を表す定数
+extern const int    kColorGray;     //!< グレーの色を表す定数
+extern const int    kColorWhite;    //!< 白の色を表す定数
+extern const int    kColorRed;      //!< 赤の色を表す定数
+extern const int    kColorGreen;    //!< 緑の色を表す定数
+extern const int    kColorBlue;     //!< 青の色を表す定数
+extern const int    kColorYellow;   //!< 黄色を表す定数
+extern const int    kColorDarkBlue; //!< 暗い青の色を表す定数
 
 // キーボードの定数
-extern const unsigned   kKeyA;
-extern const unsigned   kKeyS;
-extern const unsigned   kKeyD;
-extern const unsigned   kKeyW;
-extern const unsigned   kKeyUpArrow;
-extern const unsigned   kKeyDownArrow;
-extern const unsigned   kKeyLeftArrow;
-extern const unsigned   kKeyRightArrow;
-extern const unsigned   kKeyReturn;
-extern const unsigned   kKeySpace;
+extern const unsigned   kKeyA;          //!< キーAに対応したビットフラグ定数
+extern const unsigned   kKeyS;          //!< キーSに対応したビットフラグ定数
+extern const unsigned   kKeyD;          //!< キーDに対応したビットフラグ定数
+extern const unsigned   kKeyW;          //!< キーWに対応したビットフラグ定数
+extern const unsigned   kKeyUpArrow;    //!< 上矢印キーに対応したビットフラグ定数
+extern const unsigned   kKeyDownArrow;  //!< 下矢印キーに対応したビットフラグ定数
+extern const unsigned   kKeyLeftArrow;  //!< 左矢印キーに対応したビットフラグ定数
+extern const unsigned   kKeyRightArrow; //!< 右矢印キーに対応したビットフラグ定数
+extern const unsigned   kKeyReturn;     //!< returnキーに対応したビットフラグ定数
+extern const unsigned   kKeySpace;      //!< spaceキーに対応したビットフラグ定数
 
 
 
@@ -55,6 +55,7 @@ extern const unsigned   kKeySpace;
 
 /**
     秒数で指定した時間だけ処理を中断します。
+    @param seconds  処理を中断する秒単位の時間
  */
 void    Sleep(float seconds);
 
@@ -74,21 +75,31 @@ void    EndBatch();
 
 /**
     指定した色で画面をクリアします。
+    @param  color   画面をクリアする色（0xRRGGBB形式の数値か、kColorRedなどの定数）
  */
 void    Clear(int color);
 
 /**
     指定した座標の色を取得します。
+    @return 0xRRGGBB形式の数値
  */
 int     GetColor(int x, int y);
 
 /**
     指定した座標に点を描画します。
+    @param  x   X座標
+    @param  y   Y座標
+    @param  color   点を描画する色（0xRRGGBB形式の数値か、kColorRedなどの定数）
  */
 void    DrawPoint(int x, int y, int color);
 
 /**
     指定した2点の座標を結ぶ直線を描画します。
+    @param  x1  始点のX座標
+    @param  y1  始点のY座標
+    @param  x2  終点のX座標
+    @param  y2  終点のY座標
+    @param  color   線を描画する色（0xRRGGBB形式の数値か、kColorRedなどの定数）
  */
 void    DrawLine(int x1, int y1, int x2, int y2, int color);
 
@@ -113,13 +124,12 @@ void    DrawRect(int x, int y, int width, int height, int color);
 void    FillRect(int x, int y, int width, int height, int color);
 
 
-// TODO: 正円の縦横比を変えて楕円を描画するための引数をDrawCircle()関数とFillCircle()関数に追加する。
-
-
 /**
     指定した中心点と半径で円を描画します。
  */
 void    DrawCircle(int cx, int cy, int radius, int color);
+
+// TODO: 正円の縦横比を変えて楕円を描画するための引数をDrawCircle()関数に追加する。
 
 /**
     指定した中心点と半径、開始角度と終了角度をラジアン単位で指定して、円弧を描画します。
@@ -133,9 +143,13 @@ void    DrawCircle(int cx, int cy, int radius, int color, float startAngleRad, f
  */
 void    FillCircle(int cx, int cy, int radius, int color);
 
-// 指定した中心点と半径、開始角度と終了角度をラジアン単位で指定して、扇形の図形を塗りつぶし描画します。
-// 角度は-πから+πの範囲に修正された上で比較されます。
-// 0〜5/2πが指定された場合、これは0〜1/2πが指定されたことになりますので、第1象限の90度の扇形が描画されます。
+// TODO: 正円の縦横比を変えて楕円を描画するための引数をFillCircle()関数に追加する。
+
+/**
+    指定した中心点と半径、開始角度と終了角度をラジアン単位で指定して、扇形の図形を塗りつぶし描画します。
+    角度は-πから+πの範囲に修正された上で比較されます。
+    0〜5/2πが指定された場合、これは0〜1/2πが指定されたことになりますので、第1象限の90度の扇形が描画されます。
+ */
 void    FillCircle(int cx, int cy, int radius, int color, float startAngleRad, float endAngleRad);
 
 /**
