@@ -81,6 +81,8 @@ void    Clear(int color);
 
 /**
     指定した座標の色を取得します。
+    @param  x   X座標
+    @param  y   Y座標
     @return 0xRRGGBB形式の数値
  */
 int     GetColor(int x, int y);

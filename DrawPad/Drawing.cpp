@@ -570,7 +570,7 @@ static int fillX = 0;
 static int fillY = 0;
 
 // 円または円弧の描画の実装
-static void DrawCircle_impl(int cx, int cy, int r, int abgr, float startRad, float endRad)
+static inline void DrawCircle_impl(int cx, int cy, int r, int abgr, float startRad, float endRad)
 {
     // 座標の調整
     unsigned *p = (unsigned *)gpBuffer;
@@ -1204,13 +1204,13 @@ bool CheckKey(unsigned int key)
 
 #pragma mark - マウス関係の操作
 
-// マウスのX座標を取得する
+// マウスカーソルのX座標を取得する
 int GetMouseX()
 {
     return gMouseX - 320;
 }
 
-// マウスのY座標を取得する
+// マウスカーソルのY座標を取得する
 int GetMouseY()
 {
     return gMouseY - 240;

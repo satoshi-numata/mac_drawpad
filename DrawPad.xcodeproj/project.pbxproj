@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E35C8402325A63100B4B3B3 /* DrawingVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E35C83E2325A63100B4B3B3 /* DrawingVector.cpp */; };
+		8E35C8432325AB0F00B4B3B3 /* vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E35C8412325AB0F00B4B3B3 /* vec2.cpp */; };
 		8E429FE1214D171200DEB679 /* Drawing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E429FE0214D171200DEB679 /* Drawing.cpp */; };
 		8E7D383B214D126D000A2D31 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D383A214D126D000A2D31 /* AppDelegate.mm */; };
 		8E7D383D214D126D000A2D31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D383C214D126D000A2D31 /* main.m */; };
@@ -18,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E35C83E2325A63100B4B3B3 /* DrawingVector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DrawingVector.cpp; sourceTree = "<group>"; };
+		8E35C83F2325A63100B4B3B3 /* DrawingVector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DrawingVector.hpp; sourceTree = "<group>"; };
+		8E35C8412325AB0F00B4B3B3 /* vec2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vec2.cpp; sourceTree = "<group>"; };
+		8E35C8422325AB0F00B4B3B3 /* vec2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vec2.hpp; sourceTree = "<group>"; };
+		8E35C8442325B02C00B4B3B3 /* DrawPad.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DrawPad.hpp; sourceTree = "<group>"; };
 		8E429FE0214D171200DEB679 /* Drawing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Drawing.cpp; sourceTree = "<group>"; };
 		8E7D3834214D126D000A2D31 /* DrawPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7D3838214D126D000A2D31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,8 +95,13 @@
 		8E7D3837214D126D000A2D31 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E35C8442325B02C00B4B3B3 /* DrawPad.hpp */,
 				8E7D385E214D1519000A2D31 /* Drawing.hpp */,
 				8E429FE0214D171200DEB679 /* Drawing.cpp */,
+				8E35C83F2325A63100B4B3B3 /* DrawingVector.hpp */,
+				8E35C83E2325A63100B4B3B3 /* DrawingVector.cpp */,
+				8E35C8422325AB0F00B4B3B3 /* vec2.hpp */,
+				8E35C8412325AB0F00B4B3B3 /* vec2.cpp */,
 				8E7D385B214D148A000A2D31 /* MyViewController.h */,
 				8E7D385C214D148A000A2D31 /* MyViewController.mm */,
 				8E429FE3214D644C00DEB679 /* Other Files */,
@@ -136,6 +148,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -167,11 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7D385D214D148A000A2D31 /* MyViewController.mm in Sources */,
+				8E35C8432325AB0F00B4B3B3 /* vec2.cpp in Sources */,
 				8E7D383D214D126D000A2D31 /* main.m in Sources */,
 				8E429FE1214D171200DEB679 /* Drawing.cpp in Sources */,
 				8E7D3860214D1534000A2D31 /* DrawMain.cpp in Sources */,
 				8E7D3859214D1352000A2D31 /* MyImageView.m in Sources */,
 				8E7D383B214D126D000A2D31 /* AppDelegate.mm in Sources */,
+				8E35C8402325A63100B4B3B3 /* DrawingVector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
