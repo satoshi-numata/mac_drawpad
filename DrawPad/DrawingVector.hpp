@@ -123,7 +123,7 @@ void    Paint(const vec2& pos, int paintColor, int borderColor);
 void    DrawPattern(unsigned int *buffer, const vec2& pos);
 
 /**
-    指定された座標に文字を描画します。それぞれの文字は12x20ピクセルのサイズです。
+    指定された座標に文字を描画します。12x20ピクセルのサイズで、0x20〜0x7eのASCII文字コードの半角英数字のみ描画可能です。
     @param  c   描画対象の文字
     @param  pos 描画の開始座標
     @param  color   描画色（0xRRGGBB形式の数値か、kColorRedなどの定数）
@@ -131,7 +131,7 @@ void    DrawPattern(unsigned int *buffer, const vec2& pos);
 void    DrawCharacter(char c, const vec2& pos, int color);
 
 /**
-    指定された座標に文字列を描画します。それぞれの文字は12x20ピクセルのサイズです。
+    指定された座標に文字列を描画します。12x20ピクセルのサイズで、0x20〜0x7eのASCII文字コードの半角英数字のみ描画可能です。
     @param  str 描画対象のC言語文字列
     @param  pos 描画の開始座標
     @param  color   描画色（0xRRGGBB形式の数値か、kColorRedなどの定数）

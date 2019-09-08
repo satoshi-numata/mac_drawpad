@@ -218,7 +218,7 @@ void    Paint(int x, int y, int paintColor, int borderColor);
 void    DrawPattern(unsigned int *buffer, int x, int y);
 
 /**
-    指定された座標に文字を描画します。それぞれの文字は12x20ピクセルのサイズです。
+    指定された座標に文字を描画します。12x20ピクセルのサイズで、0x20〜0x7eのASCII文字コードの半角英数字のみ描画可能です。
     @param  c   描画対象の文字
     @param  x   X座標。画面中央を0として、右方向がプラス方向。
     @param  y   Y座標。画面中央を0として、上方向がプラス方向。
@@ -227,7 +227,7 @@ void    DrawPattern(unsigned int *buffer, int x, int y);
 void    DrawCharacter(char c, int x, int y, int color);
 
 /**
-    指定された座標に文字列を描画します。それぞれの文字は12x20ピクセルのサイズです。
+    指定された座標に文字列を描画します。12x20ピクセルのサイズで、0x20〜0x7eのASCII文字コードの半角英数字のみ描画可能です。
     @param  str 描画対象のC言語文字列
     @param  x   X座標。画面中央を0として、右方向がプラス方向。
     @param  y   Y座標。画面中央を0として、上方向がプラス方向。
