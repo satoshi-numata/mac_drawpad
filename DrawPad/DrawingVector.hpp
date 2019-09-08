@@ -140,9 +140,9 @@ void    DrawText(const char *str, const vec2& pos, int color);
 
 /**
     画面をスクロールします。
-    @param  v   スクロール量
+    @param  size    スクロール量
  */
-void    Scroll(const vec2& v);
+void    Scroll(const vec2& size);
 
 /**
     マウスカーソルの画面上の座標を取得します。

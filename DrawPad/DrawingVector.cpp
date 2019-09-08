@@ -92,9 +92,9 @@ void DrawText(const char *str, const vec2& pos, int color)
 }
 
 // スクロール処理
-void Scroll(const vec2& v)
+void Scroll(const vec2& size)
 {
-    Scroll(v.x, v.y);
+    Scroll(size.x, size.y);
 }
 
 // マウスカーソルのY座標を取得する
