@@ -16,7 +16,7 @@
 		8E7D3842214D126D000A2D31 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D3840214D126D000A2D31 /* MainMenu.xib */; };
 		8E7D3859214D1352000A2D31 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D3858214D1352000A2D31 /* MyImageView.m */; };
 		8E7D385D214D148A000A2D31 /* MyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D385C214D148A000A2D31 /* MyViewController.mm */; };
-		8E7D3860214D1534000A2D31 /* DrawMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D385F214D1534000A2D31 /* DrawMain.cpp */; };
+		8E7D3860214D1534000A2D31 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D385F214D1534000A2D31 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,7 @@
 		8E7D385B214D148A000A2D31 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		8E7D385C214D148A000A2D31 /* MyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyViewController.mm; sourceTree = "<group>"; };
 		8E7D385E214D1519000A2D31 /* Drawing.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Drawing.hpp; sourceTree = "<group>"; };
-		8E7D385F214D1534000A2D31 /* DrawMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawMain.cpp; sourceTree = "<group>"; };
+		8E7D385F214D1534000A2D31 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		8E7D3836214D126D000A2D31 /* DrawPad */ = {
 			isa = PBXGroup;
 			children = (
-				8E7D385F214D1534000A2D31 /* DrawMain.cpp */,
+				8E7D385F214D1534000A2D31 /* main.cpp */,
 				8E7D3837214D126D000A2D31 /* Supporting Files */,
 			);
 			path = DrawPad;
@@ -183,7 +183,7 @@
 				8E35C8432325AB0F00B4B3B3 /* vec2.cpp in Sources */,
 				8E7D383D214D126D000A2D31 /* main.m in Sources */,
 				8E429FE1214D171200DEB679 /* Drawing.cpp in Sources */,
-				8E7D3860214D1534000A2D31 /* DrawMain.cpp in Sources */,
+				8E7D3860214D1534000A2D31 /* main.cpp in Sources */,
 				8E7D3859214D1352000A2D31 /* MyImageView.m in Sources */,
 				8E7D383B214D126D000A2D31 /* AppDelegate.mm in Sources */,
 				8E35C8402325A63100B4B3B3 /* DrawingVector.cpp in Sources */,
