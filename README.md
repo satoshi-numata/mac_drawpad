@@ -6,5 +6,5 @@
 - C/C++を使ってシンプルなグラフィックス描画を行う教育用の環境です。
 - macOS上のXcodeでプログラミングします。
 - 保守の都合上、以前のバージョンのXcodeとの互換性を残しています。プロジェクト設定に関する警告が出た場合には、指示に従ってプロジェクトをアップデートしてください。
-- DrawPadの使い方については、[Wiki](https://github.com/sazameki/osx_drawpad/wiki)を参照してください。
+- DrawPadの使い方については、[Wiki](https://github.com/sazameki/osx_drawpad/wiki) を参照してください。
 
