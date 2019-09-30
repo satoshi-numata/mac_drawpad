@@ -1,5 +1,5 @@
 #include "DrawPad.hpp"
-#include <cmath>
+#include <math.h>
 
 void DrawMain()
 {
