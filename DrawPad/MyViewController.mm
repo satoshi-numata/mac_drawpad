@@ -266,6 +266,60 @@ static MyViewController *sInstance = nil;
     }];
 }
 
+// メモリバッファの画像をデスクトップフォルダに書き出す
+- (void)takeScreenshot:(id)sender
+{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        @autoreleasepool {
+            // メモリバッファ（が設定されたビットマップコンテキスト）を画像に変換
+            CGImageRef cgImage = CGBitmapContextCreateImage(bitmapContext);
+            NSImage *nsImage = [[NSImage alloc] initWithCGImage:cgImage size:NSMakeSize(640, 480)];
+            NSBitmapImageRep *imageRep = [[NSBitmapImageRep alloc]
+                                       initWithBitmapDataPlanes:NULL
+                                                     pixelsWide:640
+                                                     pixelsHigh:480
+                                                  bitsPerSample:8
+                                                samplesPerPixel:4
+                                                       hasAlpha:YES
+                                                       isPlanar:NO
+                                                 colorSpaceName:NSDeviceRGBColorSpace
+                                                    bytesPerRow:0
+                                                   bitsPerPixel:0];
+            imageRep.size = NSMakeSize(640, 480);
+            [NSGraphicsContext saveGraphicsState];
+            [NSGraphicsContext setCurrentContext:
+                     [NSGraphicsContext graphicsContextWithBitmapImageRep:imageRep]];
+            [nsImage drawAtPoint:NSMakePoint(0, 0)
+                        fromRect:NSZeroRect
+                       operation:NSCompositeSourceOver
+                        fraction:1.0];
+            [NSGraphicsContext restoreGraphicsState];
+
+            // ファイル名を作成
+            NSDate *date = [NSDate date];
+            NSDateFormatter *dateFormatter = [NSDateFormatter new];
+            dateFormatter.dateFormat = @"yyyyMMdd_HHmmss";
+            NSString *timeStr = [dateFormatter stringFromDate:date];
+            NSString *username = NSUserName();
+            NSString *filename = [NSString stringWithFormat:@"%@_%@.png", username, timeStr];
+
+            // ファイルパスを作成
+            NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDesktopDirectory, NSUserDomainMask, YES);
+            NSString *desktopPath = paths[0];
+            NSString *filepath = [desktopPath stringByAppendingPathComponent:filename];
+            
+            // ファイルを保存
+            NSData *data = [imageRep representationUsingType:NSPNGFileType
+                                                  properties:@{}];
+            [data writeToFile:filepath atomically:YES];
+            
+            // Finder上で画像ファイルを選択する
+            NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+            [workspace selectFile:filepath inFileViewerRootedAtPath:[filepath stringByDeletingLastPathComponent]];
+        }
+    }];
+}
+
 // 実行を一時中断する
 - (void)pauseExecution:(id)sender
 {
