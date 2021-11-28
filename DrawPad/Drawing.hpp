@@ -7,6 +7,7 @@
 //#include <cstdio>
 //#include <cstdlib>
 //#include <ctime>
+#include "vec2.hpp"
 
 
 #pragma mark - 変数・定数の定義
@@ -256,6 +257,12 @@ bool    CheckKey(unsigned int key);
 
 
 #pragma mark - マウス関係の操作
+
+/**
+    マウスカーソルの画面上の座標をvec2構造体に取得します。
+    @return マウスカーソルの座標。画面中央を(0, 0)として、右方向・上方向がプラス方向。
+ */
+vec2     GetMousePos();
 
 /**
     マウスカーソルの画面上のX座標を取得します。

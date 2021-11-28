@@ -1204,6 +1204,12 @@ bool CheckKey(unsigned int key)
 
 #pragma mark - マウス関係の操作
 
+// マウスカーソルの座標を取得する
+vec2 GetMousePos()
+{
+    return vec2(gMouseX - 320, gMouseY - 240);
+}
+
 // マウスカーソルのX座標を取得する
 int GetMouseX()
 {
