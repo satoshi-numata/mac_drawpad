@@ -424,3 +424,22 @@ void Sleep(float seconds)
     [NSThread sleepForTimeInterval:(NSTimeInterval)seconds];
 }
 
+// soundディレクトリに入れた音声ファイルを再生する
+void PlaySound(const char *filename)
+{
+    // プロジェクトのディレクトリパスを取得する
+    NSFileManager *filemgr = [[NSFileManager alloc] init];
+    NSString *prj_path = [filemgr currentDirectoryPath];
+    
+    // ファイル名をNSString型の文字列に変換する
+    NSString *filename_string = [NSString stringWithCString:filename encoding:NSUTF8StringEncoding];
+    
+    // 音声ファイルの絶対パスをパスの結合で作成する
+    NSString *sound_dir = @"/DrawPad/sound/";   // soundディレクトリ
+    
+    NSString *sound_path = [NSString stringWithFormat:@"%@%@%@", prj_path, sound_dir, filename_string];
+    
+    NSSound *sound = [[NSSound alloc] initWithContentsOfFile:sound_path byReference:YES];
+    [sound play];
+}
+
