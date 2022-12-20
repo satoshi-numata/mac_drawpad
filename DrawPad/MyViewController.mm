@@ -424,3 +424,21 @@ void Sleep(float seconds)
     [NSThread sleepForTimeInterval:(NSTimeInterval)seconds];
 }
 
+// soundディレクトリに入れた音声ファイルを再生する
+void PlaySound(const char *filename)
+{
+    // ファイル名をNSString型の文字列に変換する
+    NSString *filename_string = [NSString stringWithCString:filename encoding:NSUTF8StringEncoding];
+    
+    // soundディレクトリ内のファイルを検索してパスを取得する
+    NSString *sound_path = [[NSBundle mainBundle] pathForResource:filename_string ofType:nil inDirectory:@"sound"];
+    
+    @try{
+        NSSound *sound = [[NSSound alloc] initWithContentsOfFile:sound_path byReference:YES];
+        [sound play];
+    }
+    @catch(NSException *exception){
+        NSLog(@"\nError is %@\n", exception);
+    }
+}
+

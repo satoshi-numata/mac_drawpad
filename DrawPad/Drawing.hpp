@@ -283,5 +283,14 @@ int     GetMouseY();
 bool    CheckMouse();
 
 
+
+#pragma mark - 外部ファイルの操作関係
+
+/**
+    絶対パスで指定した音声ファイルを再生する。
+ */
+
+void    PlaySound(const char *filename);
+
 #endif /* Drawing_hpp */
 

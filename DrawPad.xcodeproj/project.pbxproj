@@ -17,6 +17,7 @@
 		8E7D3859214D1352000A2D31 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D3858214D1352000A2D31 /* MyImageView.m */; };
 		8E7D385D214D148A000A2D31 /* MyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D385C214D148A000A2D31 /* MyViewController.mm */; };
 		8E7D3860214D1534000A2D31 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D385F214D1534000A2D31 /* main.cpp */; };
+		A4AE4B22295263BA0091F056 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = A4AE4B21295263BA0091F056 /* sound */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		8E7D385C214D148A000A2D31 /* MyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyViewController.mm; sourceTree = "<group>"; };
 		8E7D385E214D1519000A2D31 /* Drawing.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Drawing.hpp; sourceTree = "<group>"; };
 		8E7D385F214D1534000A2D31 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A4AE4B21295263BA0091F056 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				8E7D385F214D1534000A2D31 /* main.cpp */,
+				A4AE4B21295263BA0091F056 /* sound */,
 				8E7D3837214D126D000A2D31 /* Supporting Files */,
 			);
 			path = DrawPad;
@@ -167,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4AE4B22295263BA0091F056 /* sound in Resources */,
 				8E7D383F214D126D000A2D31 /* Images.xcassets in Resources */,
 				8E7D3842214D126D000A2D31 /* MainMenu.xib in Resources */,
 			);
