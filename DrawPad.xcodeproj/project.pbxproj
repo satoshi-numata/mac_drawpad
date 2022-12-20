@@ -17,6 +17,7 @@
 		8E7D3859214D1352000A2D31 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D3858214D1352000A2D31 /* MyImageView.m */; };
 		8E7D385D214D148A000A2D31 /* MyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D385C214D148A000A2D31 /* MyViewController.mm */; };
 		8E7D3860214D1534000A2D31 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D385F214D1534000A2D31 /* main.cpp */; };
+		A4AE4B1C295244730091F056 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AE4B1B295244730091F056 /* AVFAudio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		8E7D385C214D148A000A2D31 /* MyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyViewController.mm; sourceTree = "<group>"; };
 		8E7D385E214D1519000A2D31 /* Drawing.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Drawing.hpp; sourceTree = "<group>"; };
 		8E7D385F214D1534000A2D31 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A4AE4B1B295244730091F056 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4AE4B1C295244730091F056 /* AVFAudio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +75,7 @@
 			children = (
 				8E7D3836214D126D000A2D31 /* DrawPad */,
 				8E7D3835214D126D000A2D31 /* Products */,
+				A4AE4B1A295244730091F056 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +111,14 @@
 				8E429FE3214D644C00DEB679 /* Other Files */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4AE4B1A295244730091F056 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE4B1B295244730091F056 /* AVFAudio.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

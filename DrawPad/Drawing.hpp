@@ -282,6 +282,10 @@ int     GetMouseY();
  */
 bool    CheckMouse();
 
+/**
+    周波数と時間を指定して正弦波を再生する
+ */
+void    PlaySineWave(float rate, float time, float future = 0);
 
 #endif /* Drawing_hpp */
 
