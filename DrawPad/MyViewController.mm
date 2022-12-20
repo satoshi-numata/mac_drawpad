@@ -2,6 +2,7 @@
 #import "MyImageView.h"
 #include "Drawing.hpp"
 #include <algorithm>
+#include <AVFAudio/AVFAudio.h>
 
 
 void DrawMain();
@@ -422,5 +423,59 @@ void FinishDrawing()
 void Sleep(float seconds)
 {
     [NSThread sleepForTimeInterval:(NSTimeInterval)seconds];
+}
+
+// AVAudioEngineを生成する
+AVAudioEngine *engine = [[AVAudioEngine alloc] init];
+
+void PlaySineWave(float rate, float time, float future)
+{
+    // プレイヤーノードを生成する
+    AVAudioPlayerNode *player = [[AVAudioPlayerNode alloc] init];
+    
+    // オーディオフォーマットを取得する
+    AVAudioFormat *format = [player outputFormatForBus:0];
+    // サンプリング周波数を取得する
+    float sample_rate = [format sampleRate];
+    // フレームの長さを指定する
+    float length = time * sample_rate;
+    // PCMバッファーを生成する
+    AVAudioPCMBuffer *buffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:format frameCapacity:UInt32(length)];
+    // フレームの長さを変更する
+    buffer.frameLength = UInt32(length);
+    // オーディオのチャンネル数を取得する
+    AVAudioChannelCount channels = [format channelCount];
+
+    // 波形を書き込む
+    for(int ch = 0; ch < channels; ch++)
+    {
+        auto samples = [buffer floatChannelData][ch];
+        for(int frame = 0; frame < buffer.frameLength; frame++)
+        {
+            samples[frame] = sinf(Float32(2.0 * M_PI) * rate * Float32(frame) / sample_rate);
+        }
+    }
+
+    // AVAudioEngineにプレイヤーノードを設定する
+    [engine attachNode:player];
+    // ミキサーノードを生成する
+    AVAudioMixerNode *mixer = [engine mainMixerNode];
+    // プレイヤーノードとミキサーノードをAVAudioEngineに接続する
+    [engine connect:player to:mixer format:format];
+
+    // 開始時間を設定する
+    AVAudioTime *future_time = [AVAudioTime timeWithSampleTime:sample_rate * future atRate:sample_rate];
+    
+    // 再生の開始を設定する
+    [player scheduleBuffer:buffer atTime:future_time options:1UL<<2 completionHandler:nil];
+
+    @try{
+        [engine startAndReturnError:nil];
+        [player play];
+    }
+    @catch(NSException *exception){
+        NSLog(@"error is %@", exception);
+    }
+    
 }
 
